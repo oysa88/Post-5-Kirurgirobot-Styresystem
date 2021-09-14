@@ -100,6 +100,11 @@ function KO () {
 function cut (cut2: boolean) {
     handleCut(cut2)
 }
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 55) {
+        home()
+    }
+})
 function home () {
     pins.servoWritePin(AnalogPin.P0, 150)
     basic.pause(200)
@@ -456,7 +461,6 @@ if (detectXstop()) {
 let receiveTime = 0
 let oldCut = false
 let homing = false
-let thisSubCommand = ""
 let thisCommand = ""
 let commands: string[] = []
 let numberOfCommands = 0
@@ -467,9 +471,10 @@ let ledLocs: number[] = []
 let hasBeenCut: boolean[] = []
 let gridSize = 0
 let speed = 0
-let yCounter = 0
-let xCounter = 0
 let cutState = false
+let xCounter = 0
+let yCounter = 0
+let thisSubCommand = ""
 // music.playMelody(music.builtInMelody., 120)
 radio.setGroup(5)
 basic.showLeds(`
