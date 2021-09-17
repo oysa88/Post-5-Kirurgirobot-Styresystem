@@ -11,19 +11,15 @@ function executeCommands () {
             thisSubCommand = thisCommand.substr(y, 1)
             switch (thisSubCommand) {
                 case "K": {
-                    radio.sendString("K")
                     cut(true)
                     cutState = true
                     KN()
-                    radio.sendString("K")
                     break;
                 }
                 case "I": {
-                    radio.sendString("I")
                     cut(false)
                     cutState = false
                     KO()
-                    radio.sendString("I")
                     break;
                 }
                 case "8": {
