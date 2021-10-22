@@ -331,7 +331,7 @@ if (detectYstop()) {
 }
 function winState () {
     soundExpression.soaring.play()
-    radio.sendString("I")
+    radio.sendString("O")
     basic.showIcon(IconNames.Heart, 2000)
 basic.clearScreen()
     control.reset()
@@ -471,10 +471,10 @@ let ledLocs: number[] = []
 let hasBeenCut: boolean[] = []
 let gridSize = 0
 let speed = 0
-let cutState = false
-let xCounter = 0
-let yCounter = 0
 let thisSubCommand = ""
+let yCounter = 0
+let xCounter = 0
+let cutState = false
 // music.playMelody(music.builtInMelody., 120)
 radio.setGroup(5)
 basic.showLeds(`
